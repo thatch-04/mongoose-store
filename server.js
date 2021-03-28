@@ -12,6 +12,8 @@ const morgan = require("morgan")
 const cors = require("cors")
 // GET PORT FROM ENV OR DEFAULT PORT
 const PORT = process.env.PORT || "2021"
+//Import product router
+const ProductRouter = require("./routes/products")
 
 //////////////////////////////
 //Create app object
@@ -43,6 +45,8 @@ app.use(express.urlencoded({extended: false})) //parse bodies from submissions
 app.get("/", (req, res) => {
     res.send("<h1>Hello World</h1>")
 })
+
+app.use("/product", ProductRouter)
 
 //////////////////////////////
 //App Listener

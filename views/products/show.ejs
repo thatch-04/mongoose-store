@@ -8,13 +8,14 @@
     <title>Sporting Goods Store</title>
 </head>
 <body>
-    <h1>Sporting Equipment</h1>
+    <h1>Sports R Us</h1>
     <a href="/product"><button>Back to Home Page</button></a>
     <main>
         <article>
             <img src="<%= product.img %>"/>
             <h2><%= product.name %></h2>
             <h4>$<%= product.price %></h3>
+            <a href = "/product/<%= product._id %>/edit"><button>Edit Product</button></a>
         </article>
     </main>
 </body>

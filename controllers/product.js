@@ -31,17 +31,32 @@ const newProduct = async (req, res) => {
 
 //Create - creates a product and redirects to index
 const create = async (req, res) => {
-    res.send("create")
+    //create new product
+    await Product.create(req.body)
+    //redirect to main page
+    res.redirect("/product")
 }
 
-//Edit - generates page to edit a product
+//Edit - generates page to edit a product "product/:id/edit"
 const edit = async (req, res) => {
-    res.send("edit")
+    //get the id param
+    const id = req.params.id
+    //get a product
+    const product = await Product.findById(id)
+    //render a view
+    res.render("products/edit", {
+        product
+    })
 }
 
-//Update - updates a product and redirects to index
+//Update - updates a product and redirects to index "/product/:id"
 const update = async (req, res) => {
-    res.send("update")
+    //grab id from params
+    const id = req.params.id
+    //update product
+    await Product.findByIdAndUpdate(id, req.body, {new: true})
+    //redirect to show page
+    res.redirect(`/product/${id}`)
 }
 
 //Destroy - Destroys a product

@@ -8,17 +8,17 @@
     <title>Sporting Goods Store</title>
 </head>
 <body>
-    <h1>Sporting Equipment</h1>
+    <h1>Sports R Us</h1>
     <a href="/product"><button>Back to Home Page</button></a>
     <main>
-        <article>
-            <form action="/product" method="POST">
+        <article id= "formcontainer">
+            <form id= "form" action="/product" method="POST">
                 <input type="text" placeholder="Name" name="name" />
                 <input type="text" placeholder="Description" name="description" />
                 <input type="text" placeholder="img url" name="img" />
                 <input type="number" placeholder="Price" name="price" />
                 <input type="number" placeholder="Quantity" name="qty" />
-                <input type="submit" value="create new product" />
+                <br><input type="submit" value="create new product" />
             </form>
         </article>
     </main>

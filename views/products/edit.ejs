@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Sporting Goods Store</title>
+</head>
+<body>
+    <h1>Sports R Us</h1>
+    <a href="/product"><button>Back to Home Page</button></a>
+    <main>
+        <article id= "formcontainer">
+            <form id= "form" action="/product/<%= product.id %>?_method=PUT" method="POST">
+                <input type="text" placeholder="Name" name="name" value="<%= product.name %>" />
+                <input type="text" placeholder="Description" name="description" value="<%= product.description %>"/>
+                <input type="text" placeholder="img url" name="img" value="<%= product.img %>"/>
+                <input type="number" placeholder="Price" name="price" value="<%= product.price %>"/>
+                <input type="number" placeholder="Quantity" name="qty" value="<%= product.qty %>"/>
+                <br><input type="submit" value="update product" />
+            </form>
+        </article>
+    </main>
+</body>
+</html>

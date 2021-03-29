@@ -15,7 +15,7 @@ router.post("/", ProductController.create)
 router.get("/:id/edit", ProductController.edit)
 
 //update put => "/products"
-router.put("/", ProductController.update)
+router.put("/:id", ProductController.update)
 
 //destroy delete => "/products/:id"
 router.delete("/:id", ProductController.destroy)

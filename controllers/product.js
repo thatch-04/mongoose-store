@@ -11,14 +11,22 @@ const index = async (req, res) => {
     })
 }
 
-//Show - generates page of one product
+//Show - generates page of one product "product/:id"
 const show = async (req, res) => {
-    res.send("show")
+    //get id param
+    const id = req.params.id
+    //get a product
+    const product = await Product.findById(id)
+    //render a view
+    res.render("products/show", {
+        product
+    })
+
 }
 
 //New - generates page to create a product
 const newProduct = async (req, res) => {
-    res.send("new")
+    res.render("products/new")
 }
 
 //Create - creates a product and redirects to index

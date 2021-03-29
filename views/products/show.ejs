@@ -9,18 +9,13 @@
 </head>
 <body>
     <h1>Sporting Equipment</h1>
+    <a href="/product"><button>Back to Home Page</button></a>
     <main>
-        <% for (product of products) { %>
-            
-            <article>
-                <a href="/product/<%= product._id %>"><img src="<%= product.img %>"/></a>
-                <h2><%= product.name %></h2>
-                <h4>$<%= product.price %></h3>
-            </article>
-
-
-
-        <% } %>
+        <article>
+            <img src="<%= product.img %>"/>
+            <h2><%= product.name %></h2>
+            <h4>$<%= product.price %></h3>
+        </article>
     </main>
 </body>
 </html>

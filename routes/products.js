@@ -20,6 +20,9 @@ router.put("/:id", ProductController.update)
 //destroy delete => "/products/:id"
 router.delete("/:id", ProductController.destroy)
 
+//remove 1 qty 
+router.get("/purchase/:id", ProductController.purchase)
+
 //show get => "/products/:id"
 router.get("/:id", ProductController.show)
 

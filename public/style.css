@@ -37,7 +37,16 @@ article h4 {
     margin: 0px 0px 5px 0px;
 }
 
+article button {
+    margin: 0px 0px 2px 0px;
+}
+
 #formcontainer {
     justify-content: flex-start;
     margin: auto;
+}
+
+button.no-stock{
+    background-color: darkgray;
+    color: black;
 }

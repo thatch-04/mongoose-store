@@ -1,4 +1,5 @@
 // Import Product Model
+const { findByIdAndUpdate } = require("../models/Product")
 const Product = require("../models/Product")
 
 //Controller Functions
@@ -59,9 +60,23 @@ const update = async (req, res) => {
     res.redirect(`/product/${id}`)
 }
 
-//Destroy - Destroys a product
+//Destroy - Destroys a product "/product/:id"
 const destroy = async (req, res) => {
-    res.send("destroy")
+    //get id
+    const id = req.params.id
+    //delete product
+    await Product.findByIdAndDelete(id)
+    //redirect to main page
+    res.redirect("/product")
+}
+
+const purchase = async (req, res) => {
+    //grab the id
+    const id = req.params.id
+    //increment the qty by -1
+    await Product.findByIdAndUpdate(id, {$inc: {qty: -1}})
+    //redirect to show page
+    res.redirect(`/product/${id}`)
 }
 
 //export my controller
@@ -73,5 +88,6 @@ module.exports = {
     create,
     edit,
     update,
-    destroy
+    destroy,
+    purchase
 }

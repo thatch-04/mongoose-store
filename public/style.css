@@ -50,3 +50,7 @@ button.no-stock{
     background-color: darkgray;
     color: black;
 }
+
+body {
+    background-color: lightgray;
+}
